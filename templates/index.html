@@ -1,0 +1,59 @@
+<title>Elgamal</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<div class="container">
+  <h2>Implementation ELGamal</h2>
+    <div class="form-group">
+        <form action="{{ url_for('operation_result') }}" method="POST">
+            <label for="text">Enter the message to be encrypted:</label>
+      <input for="content" type="text" class="form-control" id="the-message" placeholder="Enter the message" name="the-message">
+    <button class="btn btn-default" type = "submit" value = "SUBMIT">Submit</button>
+        </form>
+    </div>
+</div>
+<div class="container">
+  <h2>Computed Values</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+      {% if calculation_success == True %}
+    <tbody>
+    <tr>
+      <td>Private Key of sender</td>
+      <td name="result_1"> {{ result[1] }}</td>
+    </tr>
+    <tr>
+      <td>Public key of sender</td>
+      <td name="result_2">{{ result[2] }}</td>
+    </tr>
+    <tr>
+      <td>Encryption Key generated</td>
+      <td name="result_3">{{ result[3] }}</td>
+    </tr>
+    <tr>
+      <td>Private Key of Receiver</td>
+      <td name="result_4">{{ result[4] }}</td>
+    </tr>
+    <tr>
+      <td>The encrypted message</td>
+      <td name="result_5"><{{ result[5] }}</td>
+    </tr>
+    <tr>
+        <td>The decrypted message</td>
+        <td name="result_6">{{ result[6] }}</td>
+    </tr>
+    </tbody>
+      {% endif %}
+  </table>
+</div>
+
+
